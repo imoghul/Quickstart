@@ -17,7 +17,7 @@ public class ColorRangefinderEx {
         YELLOW,
         BLUE,
         RED,
-        NOTHING;
+        NOTHING
     }
 
     public enum Modes {

@@ -9,9 +9,9 @@ import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.Pose;
 
 import org.firstinspires.ftc.teamcode.decode.opmodes.auto.path.CustomPaths;
-import org.firstinspires.ftc.teamcode.pedroPathing.DrivePoseLoggingAction;
-import org.firstinspires.ftc.teamcode.roadrunner.Actions;
-import org.firstinspires.ftc.teamcode.roadrunner.FollowPathAction;
+import org.firstinspires.ftc.teamcode.decode.util.DrivePoseLoggingAction;
+import org.firstinspires.ftc.teamcode.decode.util.Actions;
+import org.firstinspires.ftc.teamcode.decode.util.FollowPathAction;
 
 public class CurveRightAuto extends AbstractAutoPedro {
     public final CustomPaths C_P = new CustomPaths();

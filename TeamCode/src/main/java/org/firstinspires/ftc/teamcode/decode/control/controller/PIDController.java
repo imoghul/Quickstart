@@ -39,7 +39,7 @@ public class PIDController implements FeedbackController {
      */
     public double calculate(State measurement) {
         State lastError = error;
-        error = target.minus(measurement);
+        error = target.subtract(measurement);
 
         if (signum(error.x) != signum(lastError.x)) reset();
         errorIntegral = integrator.getIntegral(error.x);
@@ -54,7 +54,7 @@ public class PIDController implements FeedbackController {
     }
 
     public boolean isPositionInTolerance(State measurement, double tolerance) {
-        return Math.abs(measurement.minus(target).x) <= tolerance;
+        return Math.abs(measurement.subtract(target).x) <= tolerance;
     }
 
     public void setTarget(State target) {

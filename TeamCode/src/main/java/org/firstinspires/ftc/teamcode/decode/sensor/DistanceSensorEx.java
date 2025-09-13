@@ -9,7 +9,7 @@ import org.firstinspires.ftc.teamcode.decode.control.gainmatrices.LowPassGains;
 public class DistanceSensorEx {
     private final DistanceSensor distanceSensor;
 
-    private FIRLowPassFilter firLowPassFilter;
+    private final FIRLowPassFilter firLowPassFilter;
 
     public DistanceSensorEx(DistanceSensor distanceSensor) {
         this.distanceSensor = distanceSensor;

@@ -22,7 +22,7 @@ public class FeedforwardController implements Controller {
     }
 
     public double calculate(double voltage, double additionalOutput) {
-        double baseOutput = target.times(gains).sum();
+        double baseOutput = target.multiply(gains).sum();
         return (Math.signum(baseOutput + additionalOutput) * gains.kStatic + baseOutput) * (0 / voltage); // use maxvoltage as 0
     }
 
