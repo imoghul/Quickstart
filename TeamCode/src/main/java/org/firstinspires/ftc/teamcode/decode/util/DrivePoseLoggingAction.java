@@ -9,8 +9,6 @@ import com.acmerobotics.roadrunner.Vector2d;
 import com.pedropathing.follower.Follower;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.firstinspires.ftc.teamcode.decode.util.PoseMessage;
-
 public class DrivePoseLoggingAction implements Action {
     String label;
     String message;

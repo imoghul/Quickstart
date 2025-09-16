@@ -24,9 +24,7 @@ public final class ActionScheduler {
     }
 
     public void addAction(Action action) {
-        actions.add(lockSubsytems());
         actions.add(action);
-        actions.add(unlockSubsytems());
     }
 
     // Won't generate previews
@@ -62,15 +60,5 @@ public final class ActionScheduler {
 
             currentAction = actions.peek();
         }
-    }
-
-    private Action lockSubsytems() {
-        return new InstantAction(() -> {
-        });
-    }
-
-    private Action unlockSubsytems() {
-        return new InstantAction(() -> {
-        });
     }
 }

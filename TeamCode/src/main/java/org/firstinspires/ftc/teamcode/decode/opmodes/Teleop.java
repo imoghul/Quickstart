@@ -3,16 +3,15 @@ package org.firstinspires.ftc.teamcode.decode.opmodes;
 import static com.arcrobotics.ftclib.gamepad.GamepadKeys.Button.LEFT_BUMPER;
 import static org.firstinspires.ftc.teamcode.decode.subsystem.Common.robot;
 
-import com.acmerobotics.dashboard.FtcDashboard;
-import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
 import com.arcrobotics.ftclib.gamepad.GamepadEx;
 import com.arcrobotics.ftclib.gamepad.GamepadKeys;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-import org.firstinspires.ftc.teamcode.decode.subsystem.Common;
 import org.firstinspires.ftc.teamcode.decode.subsystem.Robot;
 
-public class MainOpMode extends LinearOpMode {
+@TeleOp(name = "Teleop", group = "24064")
+public class Teleop extends LinearOpMode {
     // Gamepads and the 'robot' class is imported to save lines and to import controls
     public static GamepadEx gamepadEx1, gamepadEx2;
 
@@ -23,13 +22,12 @@ public class MainOpMode extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
-        Common.mTelemetry = new MultipleTelemetry(telemetry, FtcDashboard.getInstance().getTelemetry());
-
         gamepadEx1 = new GamepadEx(gamepad1);
         gamepadEx2 = new GamepadEx(gamepad2);
 
         robot = new Robot(hardwareMap);
         robot.drivetrain.startTeleopDrive();
+        robot.drivetrain.update();
 
         waitForStart();
 
@@ -50,6 +48,8 @@ public class MainOpMode extends LinearOpMode {
                     -gamepadEx1.getRightX() * slowTurningMult,
                     false
             );
+
+            robot.run();
         }
     }
 }

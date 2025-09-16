@@ -1,16 +1,11 @@
 package org.firstinspires.ftc.teamcode.decode.subsystem;
 
 import com.acmerobotics.dashboard.config.Config;
-import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
-import com.acmerobotics.roadrunner.Pose2d;
 import com.pedropathing.geometry.Pose;
 
 @Config
 public final class Common {
-    public static Pose2d AUTO_END_POSE = null;
-    public static Pose AUTO_END_POSE_PEDRO = null;
-
-    public static boolean IS_RED = true, IS_SPECIMEN_SIDE = false;
+    public static Pose AUTO_END_POSE = null;
 
     public static final double
             LEFT = Math.toRadians(180),
@@ -25,14 +20,7 @@ public final class Common {
             SERVO_AXON_MIN = 0,
             SERVO_AXON_MAX_2 = 355;
 
-    public static final int
-            LIMELIGHT_RED_DETECTION_PIPELINE = 7,
-            LIMELIGHT_BLUE_DETECTION_PIPELINE = 6 ,
-            LIMELIGHT_SPECIMEN_NN_PIPELINE = 4;
-
     public static final double MAX_VOLTAGE = 13;
 
     public static Robot robot;
-    public static MultipleTelemetry mTelemetry;
-
 }
